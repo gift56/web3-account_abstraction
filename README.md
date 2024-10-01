@@ -14,6 +14,7 @@ Web Social is a web application built with Next15 that provides a modern and eff
     - [Project Structure](#project-structure)
     - [Available Scripts](#available-scripts)
     - [Dependencies](#dependencies)
+    - [Database](#database)
     - [Contributing](#contributing)
     - [License](#license)
 
@@ -100,6 +101,10 @@ In the project directory, you can run the following scripts:
 - tailwindcss: ^3.4.11
 - typescript: ^5.5.3
 
+
+### Database
+
+- Prisma ORM
 
 ### Contributing
 
