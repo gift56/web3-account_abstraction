@@ -7,7 +7,7 @@ const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="md:hidden">
+    <div className="md:hidden ml-4">
       <button
         type="button"
         className="flex flex-col gap-1"

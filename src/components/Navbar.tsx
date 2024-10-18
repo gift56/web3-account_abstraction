@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className="flex items-center justify-between w-full h-24">
       <div className="md:hidden lg:block w-[20%]">
-        <Link href="/" className="uppercase text-xl font-bold text-blue-600">
+        <Link href="/" className="uppercase md:text-xl font-bold text-blue-600">
           SocialMedia
         </Link>
       </div>
