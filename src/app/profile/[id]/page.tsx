@@ -23,7 +23,7 @@ const Profilepage = () => {
       </div>
       <div className="hidden lg:block w-[30%] overflow-y-auto">
         <aside aria-label="right side navigation">
-          <RightMenu />
+          <RightMenu userId="test" />
         </aside>
       </div>
     </div>
