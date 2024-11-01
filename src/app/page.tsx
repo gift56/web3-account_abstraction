@@ -3,6 +3,12 @@ import Feed from "@/components/Feed";
 import LeftMenu from "@/components/LeftMenu";
 import RightMenu from "@/components/RightMenu";
 import Stories from "@/components/Stories";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Socail Media App",
+  description: "Socail Media App",
+};
 
 const Homepage = () => {
   return (
