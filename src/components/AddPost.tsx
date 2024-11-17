@@ -1,6 +1,10 @@
+import prisma from "@/lib/client";
+import { auth } from "@clerk/nextjs/server";
 import Image from "next/image";
 
 const AddPost: React.FC = () => {
+  const { userId } = auth();
+
   return (
     <div className="p-4 bg-white shadow-md rounded-lg flex gap-4 justify-between text-sm">
       <Image
@@ -12,7 +16,7 @@ const AddPost: React.FC = () => {
         priority
       />
       <div className="flex-1">
-        <form className="flex gap-4">
+        <form action={""} className="flex gap-4">
           <textarea
             placeholder="What's on your mind?"
             name="desc"
@@ -28,6 +32,7 @@ const AddPost: React.FC = () => {
               priority
             />
           </div>
+          <button type="submit">Post</button>
         </form>
         <div className="flex items-center gap-4 mt-4 text-gray-400 flex-wrap">
           {/* <CldUploadWidget
