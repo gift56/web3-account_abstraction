@@ -5,6 +5,7 @@ import { User } from "@prisma/client";
 import { auth } from "@clerk/nextjs/server";
 import prisma from "@/lib/client";
 import UserInfoCardInteraction from "./UserInfoCardInteraction";
+import UpdateUser from "./UpdateUser";
 
 interface UserInfoCardProps {
   user: User;
@@ -56,9 +57,13 @@ const UserInfoCard: React.FC<UserInfoCardProps> = async ({ user }) => {
     <section className="p-4 bg-white rounded-lg shadow-md text-sm space-y-4">
       <div className="flex items-center justify-between font-medium">
         <h6 className="text-gray-500">User Information</h6>
-        <Link href="/" className="text-blue-500 text-xs">
-          See all
-        </Link>
+        {currentUserId === user.id ? (
+          <UpdateUser user={user} />
+        ) : (
+          <Link href="/" className="text-blue-500 text-xs">
+            See all
+          </Link>
+        )}
       </div>
       <div className="flex flex-col gap-4 text-gray-500">
         <div className="flex items-center gap-2">
@@ -77,7 +82,7 @@ const UserInfoCard: React.FC<UserInfoCardProps> = async ({ user }) => {
 
         {user.city && (
           <div className="flex items-center gap-2">
-            <Image src="/map.png" alt="" width={16} height={16} />
+            <Image src="/map.png" alt="map icon" width={16} height={16} />
             <span>
               Living in <b>{user.city}</b>
             </span>
@@ -85,7 +90,7 @@ const UserInfoCard: React.FC<UserInfoCardProps> = async ({ user }) => {
         )}
         {user.school && (
           <div className="flex items-center gap-2">
-            <Image src="/school.png" alt="" width={16} height={16} />
+            <Image src="/school.png" alt="school icon" width={16} height={16} />
             <span>
               Went to <b>{user.school}</b>
             </span>
@@ -93,7 +98,7 @@ const UserInfoCard: React.FC<UserInfoCardProps> = async ({ user }) => {
         )}
         {user.work && (
           <div className="flex items-center gap-2">
-            <Image src="/work.png" alt="" width={16} height={16} />
+            <Image src="/work.png" alt="work icon" width={16} height={16} />
             <span>
               Works at <b>{user.work}</b>
             </span>
@@ -102,14 +107,14 @@ const UserInfoCard: React.FC<UserInfoCardProps> = async ({ user }) => {
         <div className="flex items-center justify-between">
           {user.website && (
             <div className="flex gap-1 items-center">
-              <Image src="/link.png" alt="" width={16} height={16} />
+              <Image src="/link.png" alt="link icon" width={16} height={16} />
               <Link href={user.website} className="text-blue-500 font-medium">
                 {user.website}
               </Link>
             </div>
           )}
           <div className="flex gap-1 items-center">
-            <Image src="/date.png" alt="" width={16} height={16} />
+            <Image src="/date.png" alt="date icon" width={16} height={16} />
             <span>Joined {formattedDate}</span>
           </div>
         </div>
