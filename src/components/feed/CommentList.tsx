@@ -75,7 +75,7 @@ const CommentList: React.FC<CommentListProps> = ({ comments, postId }) => {
             />
             <Image
               src="/emoji.png"
-              alt=""
+              alt="emoji"
               width={16}
               height={16}
               className="cursor-pointer"
